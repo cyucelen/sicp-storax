@@ -27,3 +27,5 @@
 (= (sum-square-larger 1 2 3) 13)
 (= (sum-square-larger 7 3 5) 74)
 (= (sum-square-larger 4 1 9) 97)
+
+; observations
