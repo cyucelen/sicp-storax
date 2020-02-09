@@ -3,8 +3,8 @@
 ; exercise 1.6
 
 (define (new-if predicate then-clause else-clause)
-    (cond (predicate then-clause)
-          (else else-clause)))
+  (cond (predicate then-clause)
+        (else else-clause)))
 
 ; tests
 
@@ -18,23 +18,23 @@
 ; Original square root by newtons method program
 
 (define (sqrt x)
-    (sqrt-iter 1.0 x))
+  (sqrt-iter 1.0 x))
 
 (define (sqrt-iter guess x)
-    (if (good-enough? guess x)
-        guess
-        (sqrt-iter (improve guess x)
-                    x)))
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x)
+                 x)))
 
 (define (good-enough? guess x)
-    (< (abs (- (square guess) x)) 
-        0.001))
+  (< (abs (- (square guess) x)) 
+     0.001))
 
 (define (improve guess x)
-    (average guess (/ x guess)))
+  (average guess (/ x guess)))
 
 (define (average x y)
-    (/ (+ x y) 2))
+  (/ (+ x y) 2))
 
 (define (square x) (* x x))
 
@@ -43,13 +43,13 @@
 ; new-if version of square root by newtons method program
 
 (define (sqrt-new x)
-    (sqrt-iter-new 1.0 x))
+  (sqrt-iter-new 1.0 x))
 
 (define (sqrt-iter-new guess x)
-    (new-if (good-enough? guess x)
-        guess
-        (sqrt-iter-new (improve guess x)
-                    x)))
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter-new (improve guess x)
+                         x)))
 
 ; (sqrt-new 4) ; not terminates!
 ;
