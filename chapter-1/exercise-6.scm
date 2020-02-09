@@ -23,8 +23,7 @@
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
       guess
-      (sqrt-iter (improve guess x)
-                 x)))
+      (sqrt-iter (improve guess x) x)))
 
 (define (good-enough? guess x)
   (< (abs (- (square guess) x)) 
@@ -40,6 +39,16 @@
 
 (sqrt 4)
 
+(display "Computing square root of small number\n")
+
+(define (approximation) (sqrt 0.000123)) 
+
+(string-append "approximation: " (number->string (approximation))) ; 0.03254988507909497
+(string-append "real value:    0.01109053651")
+
+; computing square roots of small numbers not effective with this program as shown above.
+; better approach implemented in #exercise 1.8
+
 ; new-if version of square root by newtons method program
 
 (define (sqrt-new x)
@@ -48,8 +57,7 @@
 (define (sqrt-iter-new guess x)
   (new-if (good-enough? guess x)
           guess
-          (sqrt-iter-new (improve guess x)
-                         x)))
+          (sqrt-iter-new (improve guess x) x)))
 
 ; (sqrt-new 4) ; not terminates!
 ;
